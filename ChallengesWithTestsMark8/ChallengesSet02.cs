@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -50,7 +51,7 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            return numbers == null || numbers.Count() == 0 ? 0 : numbers.Min() + numbers.Max();
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
@@ -65,11 +66,11 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            int numbers2 = 0;
-            foreach (var number in numbers)
-            { numbers2 = number + number; }
-            return numbers2;
-
+            //int numbers2 = 0;
+            //foreach (var number in numbers)
+            //{ numbers2 = number + number; }
+            //return numbers2;
+            return numbers == null || numbers.Length == 0 ? 0 : numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
@@ -86,18 +87,22 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOdd(List<int> numbers)
         {
-            int number2 = 0;
-            foreach (var number in numbers)
-                number2 = number + number;
-            if (number2 % 2 == 0)
-            { return false; }
-            else
-            { return true; }
+            //int number2 = 0;
+            //foreach (var number in numbers)
+            //    number2 = number + number;
+            //if (number2 % 2 == 0)
+            //{ return false; }
+            //else
+            //{ return true; }
+
+            
+
+            return numbers != null && numbers.Count() > 0 && numbers.Sum() % 2 != 0;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            return number <= 0 ? 0 : number / 2;
         }
     }
 }
